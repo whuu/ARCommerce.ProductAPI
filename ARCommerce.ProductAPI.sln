@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{F347A85D-6FF5-4927-B5CF-54D81954E6A2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		publishsettings.targets = publishsettings.targets
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{755F9E42-1707-4E1A-AE6D-3FD8A25118C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{D2CBE02E-6AA7-4343-9A01-891F971A17F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Serialization", "src\foundation\Serialization\code\Sitecore.Foundation.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{BF8EAE6B-0DFD-45EC-A419-1EC760FE9E49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{BF5435DD-EE0F-4CB3-A205-7D1F11858295}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ARCommerce.Feature.Catalog", "src\Feature\Catalog\code\ARCommerce.Feature.Catalog.csproj", "{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Debug|x64.Build.0 = Debug|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|x64.ActiveCfg = Release|Any CPU
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|x64.Build.0 = Release|Any CPU
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}.Debug|x64.Build.0 = Debug|Any CPU
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}.Release|x64.ActiveCfg = Release|Any CPU
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{007CD5DC-0030-460D-91A3-3DDEA9AB472F} = {BF8EAE6B-0DFD-45EC-A419-1EC760FE9E49}
+		{BF8EAE6B-0DFD-45EC-A419-1EC760FE9E49} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{BF5435DD-EE0F-4CB3-A205-7D1F11858295} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
+		{FA3D4B43-28E6-48E8-9FAC-41EC61F01860} = {BF5435DD-EE0F-4CB3-A205-7D1F11858295}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1473F01-0398-4D9E-B67D-152B058C94E8}
+	EndGlobalSection
+EndGlobal
