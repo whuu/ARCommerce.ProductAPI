@@ -75,6 +75,9 @@
     <Reference Include="Sitecore.Mvc, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.9.0.171219\lib\NET462\Sitecore.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.XA.Foundation.IoC, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.XA.Foundation.IoC.3.7.0.643\lib\NET462\Sitecore.XA.Foundation.IoC.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.XA.Foundation.Mvc, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.XA.Foundation.Mvc.3.7.0.643\lib\NET462\Sitecore.XA.Foundation.Mvc.dll</HintPath>
     </Reference>
@@ -139,6 +142,7 @@
     <Compile Include="Controllers\ARCatalogController.cs" />
     <Compile Include="Models\ProductScan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterDependencies.cs" />
     <Compile Include="Repositories\IARCatalogRepository.cs" />
     <Compile Include="Repositories\ARCatalogRepository.cs" />
   </ItemGroup>
