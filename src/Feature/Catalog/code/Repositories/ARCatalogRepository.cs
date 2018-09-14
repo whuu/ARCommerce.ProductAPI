@@ -89,51 +89,20 @@ namespace ARCommerce.Feature.Catalog.Repositories
 			ProductEntity productEntity = ModelProvider.GetModel<ProductEntity>();
 			productEntity.Initialize(currentStorefront, productItem, variantEntityList);
 			var renderingModel = ModelProvider.GetModel<ProductSummaryViewModel>();
-			if (renderingModel.ProductId == currentStorefront.GiftCardProductId)
+
+			var products = new List<ProductEntity> { productEntity };
+			InventoryManager.GetProductsStockStatus(currentStorefront, products, currentStorefront.UseIndexFileForProductStatusInLists);
+			CatalogManager.GetProductBulkPrices(currentStorefront, visitorContext, products);
+			if (productEntity.ProductId == currentStorefront.GiftCardProductId)
 			{
 				renderingModel.GiftCardAmountOptions = GetGiftCardAmountOptions(visitorContext, currentStorefront, productEntity);
 			}
 			else
 			{
-				CatalogManager.GetProductPrice(currentStorefront, visitorContext, productEntity);
 				renderingModel.CustomerAverageRating = CatalogManager.GetProductRating(productItem);
 			}
 			renderingModel.Initialize(productEntity, false);
 			return renderingModel;
-		}
-
-		protected virtual List<ProductEntity> AdjustProductPriceAndStockStatus(IVisitorContext visitorContext, SearchResults searchResult, Item currentCategory)
-		{
-			CommerceStorefront currentStorefront = this.StorefrontContext.CurrentStorefront;
-			List<ProductEntity> list = new List<ProductEntity>();
-			string str = "Category/" + currentCategory.Name;
-			if (this.SiteContext.Items[(object)str] != null)
-				return (List<ProductEntity>)this.SiteContext.Items[(object)str];
-			if (searchResult.SearchResultItems != null && searchResult.SearchResultItems.Count > 0)
-			{
-				foreach (Item obj in searchResult.SearchResultItems)
-				{
-					ProductEntity model = this.ModelProvider.GetModel<ProductEntity>();
-					model.Initialize(currentStorefront, obj, (List<VariantEntity>)null);
-					list.Add(model);
-				}
-				this.CatalogManager.GetProductBulkPrices(currentStorefront, visitorContext, list);
-				this.InventoryManager.GetProductsStockStatus(currentStorefront, list, currentStorefront.UseIndexFileForProductStatusInLists);
-				foreach (ProductEntity productEntity1 in list)
-				{
-					ProductEntity productEntity = productEntity1;
-					Item productItem = Enumerable.FirstOrDefault<Item>((IEnumerable<Item>)searchResult.SearchResultItems, (Func<Item, bool>)(item =>
-					{
-						if (item.Name == productEntity.ProductId)
-							return item.Language == Context.Language;
-						return false;
-					}));
-					if (productItem != null)
-						productEntity.CustomerAverageRating = this.CatalogManager.GetProductRating(productItem);
-				}
-			}
-			this.SiteContext.Items[(object)str] = (object)list;
-			return list;
 		}
 	}
 }
