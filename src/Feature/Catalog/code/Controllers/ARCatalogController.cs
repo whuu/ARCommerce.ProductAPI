@@ -47,18 +47,20 @@
 			_arRepository = arRepository;
 		}
 
+		[HttpGet]
 		public JsonResult GetProductScans([Bind(Prefix = "cci")] string currentCatalogItemId, [Bind(Prefix = "ci")] string currentItemId)
 		{
 			var service = ServiceLocator.ServiceProvider.GetService<IVisitorContext>();
 			var products = _arRepository.GetProductScans(service, currentItemId, currentCatalogItemId);
-			return Json(products);
+			return Json(products, JsonRequestBehavior.AllowGet);
 		}
 
+		[HttpGet]
 		public JsonResult ProductInformation([Bind(Prefix = "id")] string productId)
 		{
 			var service = ServiceProviderServiceExtensions.GetService<IVisitorContext>(ServiceLocator.ServiceProvider);
 			var product = _arRepository.GetProductInformation(service, productId);
-			return Json(product);
+			return Json(product, JsonRequestBehavior.AllowGet);
 		}
 	}
 }

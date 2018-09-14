@@ -9,6 +9,6 @@ namespace ARCommerce.Feature.Catalog.Repositories
 	{
 		List<ProductScan> GetProductScans(IVisitorContext visitorContext, string currentItemId, string currentCatalogItemId);
 
-		CatalogItemRenderingModel GetProductInformation(IVisitorContext visitorContext, string productId);
+		ProductSummaryViewModel GetProductInformation(IVisitorContext visitorContext, string productId);
 	}
 }
