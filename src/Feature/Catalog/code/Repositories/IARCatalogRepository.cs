@@ -7,7 +7,7 @@ namespace ARCommerce.Feature.Catalog.Repositories
 {
 	public interface IARCatalogRepository
 	{
-		List<ProductScan> GetProductScans(IVisitorContext visitorContext, string currentItemId, string currentCatalogItemId);
+		List<ProductScan> GetProductScans(IVisitorContext visitorContext, string currentCatalogItemId);
 
 		ProductSummaryViewModel GetProductInformation(IVisitorContext visitorContext, string productId);
 	}

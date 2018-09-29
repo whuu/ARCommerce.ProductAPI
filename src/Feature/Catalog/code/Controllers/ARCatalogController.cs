@@ -48,10 +48,10 @@
 		}
 
 		[HttpGet]
-		public JsonResult GetProductScans([Bind(Prefix = "cci")] string currentCatalogItemId, [Bind(Prefix = "ci")] string currentItemId)
+		public JsonResult GetProductScans([Bind(Prefix = "cci")] string currentCatalogItemId)
 		{
 			var service = ServiceLocator.ServiceProvider.GetService<IVisitorContext>();
-			var products = _arRepository.GetProductScans(service, currentItemId, currentCatalogItemId);
+			var products = _arRepository.GetProductScans(service, currentCatalogItemId);
 			return Json(products, JsonRequestBehavior.AllowGet);
 		}
 

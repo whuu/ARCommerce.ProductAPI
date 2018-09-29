@@ -14,6 +14,7 @@ using Sitecore.Commerce.XA.Foundation.Connect.Entities;
 using Sitecore.Commerce.XA.Foundation.Connect.Managers;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
+using Sitecore.Resources.Media;
 
 namespace ARCommerce.Feature.Catalog.Repositories
 {
@@ -33,7 +34,7 @@ namespace ARCommerce.Feature.Catalog.Repositories
 		{
 		}
 
-		public List<ProductScan> GetProductScans(IVisitorContext visitorContext, string currentItemId, string currentCatalogItemId)
+		public List<ProductScan> GetProductScans(IVisitorContext visitorContext, string currentCatalogItemId)
 		{
 			Assert.ArgumentNotNull(visitorContext, "visitorContext");
 			var model = ModelProvider.GetModel<ProductListJsonResult>();
@@ -45,10 +46,6 @@ namespace ARCommerce.Feature.Catalog.Repositories
 				return null;
 			}
 
-			var currentItem = Context.Database.GetItem(currentItemId);
-			SiteContext.CurrentCatalogItem = curentCatalogItem;
-			SiteContext.CurrentItem = currentItem;
-
 			CategorySearchInformation searchInformation = SearchInformation.GetCategorySearchInformation(curentCatalogItem);
 			CommerceSearchOptions commerceSearchOptions = new CommerceSearchOptions(GetDefaultItemsPerPage(null, searchInformation),0);
 			
@@ -57,12 +54,13 @@ namespace ARCommerce.Feature.Catalog.Repositories
 
 			productEntityList.Select(p => p.ProductId);
 
-			return productEntityList.Select(p => new ProductScan { ProductId = p.ProductId, ScanFilePath = "TODO" }).ToList();
+			return productEntityList.Select(p => new ProductScan { ProductId = p.ProductId, ScanFilePath = GetProductArMapFilePath(p.ProductId, StorefrontContext.CurrentStorefront.Context) }).ToList();
 		}
 
 		public ProductSummaryViewModel GetProductInformation(IVisitorContext visitorContext, string productId)
 		{
 			var currentStorefront = StorefrontContext.CurrentStorefront;
+			
 			var productItem = SearchManager.GetProduct(productId, currentStorefront.Catalog);
 			if (productItem == null)
 			{
@@ -103,6 +101,27 @@ namespace ARCommerce.Feature.Catalog.Repositories
 			}
 			renderingModel.Initialize(productEntity, false);
 			return renderingModel;
+		}
+
+		protected virtual string GetProductArMapFilePath(string productID, IContext context)
+		{
+			string productContentParentPath = Sitecore.Configuration.Settings.GetSetting("ARCommerce.Feature.Catalog.ARContent");
+			if (string.IsNullOrEmpty(productContentParentPath))
+			{
+				return string.Empty;
+			}
+			var productContentParent = context.Database.GetItem(productContentParentPath);
+			if (productContentParent == null)
+			{
+				return string.Empty;
+			}
+			Item contentRepoParent = productContentParent.Axes.GetDescendants().Where(repo => repo.Name == productID).FirstOrDefault();
+			if (contentRepoParent == null)
+			{
+				return string.Empty;
+			}
+			var mapFileItem = contentRepoParent.Children.FirstOrDefault(i => i.TemplateID == Sitecore.TemplateIDs.UnversionedFile);
+			return MediaManager.GetMediaUrl(new MediaItem(mapFileItem));
 		}
 	}
 }
