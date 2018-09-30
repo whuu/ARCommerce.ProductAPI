@@ -57,4 +57,4 @@ Put following files into `\lib\Modules\Commerce` folder:
 * `Sitecore.Commerce.XA.Foundation.Common.dll`
 * `Sitecore.Commerce.XA.Foundation.Connect.dll`
 
-Deploy `ARCommerce.Feature.Catalog.csproj` to your Sitecore Commerce website.
+Deploy `ARCommerce.Feature.Catalog.csproj` to your Sitecore Commerce website with Visual Studio.
