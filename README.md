@@ -1,6 +1,6 @@
 # ARCommerce.ProductAPI
 
-[Sitecore Commerce](https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx) product API to use in Augmented Reality application. Compatible with [Apple ARKit](https://developer.apple.com/arkit/). Check [ARCommerce.ClientApp](https://github.com/whuu/ARCommerce.ClientApp) for sample usage. 
+[Sitecore Commerce](https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx) product API to use in Augmented Reality application. Compatible with [Apple ARKit](https://developer.apple.com/arkit/). <br/>Check [ARCommerce.ClientApp](https://github.com/whuu/ARCommerce.ClientApp) for sample usage. 
 
 ## Usage
 
