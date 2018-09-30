@@ -39,7 +39,9 @@ Project adds two API endpoints for accessing products data:
 	}
 	```
 
-To link AR object scan (`.arobject` file) with commerce product, upload it to Sitecore Media Library under `/sitecore/media library/AR Maps/{product id}` item. Path is configured in `ARCommerce.Feature.Catalog.config`
+To link AR object scan (`.arobject` file) with commerce product, upload it to Sitecore Media Library under `/sitecore/media library/AR Maps/{product id}` item. Path is configured in `ARCommerce.Feature.Catalog.config`.
+
+To generate .arobject files you can install [Scanning and detecting 3d objects app](https://developer.apple.com/documentation/arkit/scanning_and_detecting_3d_objects) on iOS device.
 
 Sample iOS client code for this API can be found [here](https://github.com/whuu/ARCommerce.ClientApp)
 
