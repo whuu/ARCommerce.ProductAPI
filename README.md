@@ -43,10 +43,10 @@ Sitecore XC 9.0 Update-2 with SXA
 
 ## Installation
 
-### Put files into `\lib\Modules\Commerce` folder: 
+Put following files into `\lib\Modules\Commerce` folder: 
 * `Sitecore.Commerce.XA.Feature.Catalog.dll`
 * `Sitecore.Commerce.XA.Foundation.Catalog.dll`
 * `Sitecore.Commerce.XA.Foundation.Common.dll`
 * `Sitecore.Commerce.XA.Foundation.Connect.dll`
 
-### Deploy `ARCommerce.Feature.Catalog.csproj` to your Sitecore Commerce website.
+Deploy `ARCommerce.Feature.Catalog.csproj` to your Sitecore Commerce website.
