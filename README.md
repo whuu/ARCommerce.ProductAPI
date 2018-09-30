@@ -5,7 +5,7 @@
 ## Usage
 
 Project adds two API endpoints for accessing products data:
-* Get product scans for given product category item id: <br/>
+* Search for all products in the category (for given category item id) and return paths to object scan files assigned to the products: <br/>
  `GET /api/cxa/ARCatalog/GetProductScans?cci={catalog item id}`<br/>
  Returned JSON (sample): 
 	```
