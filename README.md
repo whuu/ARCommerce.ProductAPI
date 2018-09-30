@@ -6,7 +6,7 @@
 
 Project adds two API endpoints for accessing products data:
 * Get product scans for given product category item id: <br/>
- GET `/api/cxa/ARCatalog/GetProductScans?cci={catalog item id}`<br/>
+ `GET /api/cxa/ARCatalog/GetProductScans?cci={catalog item id}`<br/>
  Returned JSON: 
 	```
 	[
@@ -19,7 +19,7 @@ Project adds two API endpoints for accessing products data:
 	```
   
 * Get product details for given product id: <br/>
- GET `/api/cxa/ARCatalog/ProductInformation?id={product id}` <br/>
+ `GET /api/cxa/ARCatalog/ProductInformation?id={product id}` <br/>
 	Returned JSON:
 	```
 	{
