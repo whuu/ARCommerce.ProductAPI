@@ -14,6 +14,10 @@ Project adds two API endpoints for accessing products data:
 			  "ProductId":"123456",
 			  "ScanFilePath":"/-/media/AR-Maps/123456/iron.arobject"
 			},
+			{
+			  "ProductId":"321654",
+			  "ScanFilePath":"/-/media/AR-Maps/321654/plate.arobject"
+			},
 			...
 	]
 	```
