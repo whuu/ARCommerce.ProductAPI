@@ -1,16 +1,15 @@
 # ARCommerce.ProductAPI
 
-Sitecore Commerce product API to use in Augmented Reality application. Developed with [Apple ARKit](https://developer.apple.com/arkit/)
+[Sitecore Commerce](https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx) product API to use in Augmented Reality application. Developed with [Apple ARKit](https://developer.apple.com/arkit/)
 
 ## Usage
 
 Project adds two API endpoints for accessing products data:
-* Get product scans for given product category item id: 
-
+* Get product scans for given product category item id: <br/>
  GET `/api/cxa/ARCatalog/GetProductScans?cci={catalog item id}`
  Return: 
   
-* Get product details for given product id: 
+* Get product details for given product id: <br/>
  GET `/api/cxa/ARCatalog/ProductInformation?id={product id}`
 
 Sample iOS client code for this API can be found [here](https://github.com/whuu/ARCommerce.ClientApp)
