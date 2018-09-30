@@ -1,6 +1,6 @@
 # ARCommerce.ProductAPI
 
-[Sitecore Commerce](https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx) product API to use in Augmented Reality application. Developed with [Apple ARKit](https://developer.apple.com/arkit/)
+[Sitecore Commerce](https://dev.sitecore.net/Downloads/Sitecore_Commerce.aspx) product API to use in Augmented Reality application. Compatible with [Apple ARKit](https://developer.apple.com/arkit/).
 
 ## Usage
 
@@ -34,6 +34,8 @@ Project adds two API endpoints for accessing products data:
          ...
 	}
 	```
+
+To link AR object scan (`.arobject` file) with commerce product, upload it to Sitecore Media Library under `/sitecore/media library/AR Maps/{product id}` item. Path is configured in `ARCommerce.Feature.Catalog.config`
 
 Sample iOS client code for this API can be found [here](https://github.com/whuu/ARCommerce.ClientApp)
 
