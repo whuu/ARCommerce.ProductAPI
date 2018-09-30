@@ -23,8 +23,8 @@ Project adds two API endpoints for accessing products data:
 	Returned JSON:
 	```
 	{
-	 "DisplayName":"Azur 10/02",
-	 "Description":"Text Description.",
+	     "DisplayName":"Azur 10/02",
+	     "Description":"Text Description.",
          "SummaryImageUrl":"/-/media/Images/Habitat/123456.png?h=220\u0026w=263\u0026hash=5C258CA2D56764DF5E0ACCEBDEB186BA",
          "Link":"/shop/Connectedhome%3dhabitat_master-connected%20home/PhilipsAzurGC4410%5B%5BSS%5D%5D02%3d123456",
          "ProductId":"123456",
